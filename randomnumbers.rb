@@ -44,11 +44,11 @@ __END__
       %ol
         %li
           %label{:for => "min"} Min:
-          %input{:type => "text", :name => "min", :class => "text"}
+          %input{:type => "text", :name => "min", :class => "text"} (default is 1)
         %li
           %label{:for => "max"} Max:
-          %input{:type => "text", :name => "max", :class => "text"}
+          %input{:type => "text", :name => "max", :class => "text"} (default is 100)
         %li
           %label{:for => "count"} How many?:
-          %input{:type => "text", :name => "count", :class => "text"}
+          %input{:type => "text", :name => "count", :class => "text"} (default is 10)
       %input{:type => "submit", :value => "Gimme A Number", :class => "button"}
