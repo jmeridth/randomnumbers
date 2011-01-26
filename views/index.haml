@@ -1,0 +1,41 @@
+- if @result
+  %div#result
+    #{@result}
+    %br
+    %a{:href=>'/'} Get Another Number
+- else
+  :javascript
+    function clearInput(e) {
+      if (e.cleared) { return; }
+      e.cleared = true;
+      e.value = '';
+      e.style.color = '#000';
+    }
+    function formSubmit() {
+      min = getValue('min',1);
+      max = getValue('max',100);
+      count = getValue('count',10);
+       
+      window.location = '/' + min + '/' + max + '/' + count;
+      return false;
+    }
+    function getValue(fieldId, default_value){
+      value = document.getElementById(fieldId).value;
+      return ((value == "default is " + default_value.toString()) || value == "") 
+        ? default_value 
+        : value;
+    }
+  %div#container
+    %form{:action => "/calculate",:method => "post"}
+      %fieldset
+        %ol
+          %li
+            %label{:for => "min"} Min:
+            %input{:type => "text", :name => "min", :id => "min", :value => "default is 1", :onclick => "clearInput(this);"}
+          %li
+            %label{:for => "max"} Max:
+            %input{:type => "text", :name => "max", :id => "max", :value => "default is 100", :onclick => "clearInput(this);"}
+          %li
+            %label{:for => "count"} How many?:
+            %input{:type => "text", :name => "count", :id => "count", :value => "default is 10", :onclick => "clearInput(this);"} 
+        %a{:href => "#", :onclick => "formSubmit();"} Gimme A Number
