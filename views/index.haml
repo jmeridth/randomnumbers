@@ -34,6 +34,9 @@
         : value;
     }
   %div#container
+    -if @error
+      %div#error
+        #{@error}
     %fieldset
       %ol
         %li
