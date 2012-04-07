@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'shotgun'
 gem 'haml'
 
-
-gem "rack-test", require: "rack/test"
+group :development, :test do
+  gem 'shotgun'
+  gem "rack-test", require: "rack/test"
+end
