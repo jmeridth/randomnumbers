@@ -6,4 +6,4 @@
 
 #deployed to [Heroku](http://heroku.com).
 
-[![Build Status](https://secure.travis-ci.org/jmeridth/randomnumbers.png?branch=master)](http://travis-ci.org/#!/jmeridth/randomnumbers)
+[![CircleCI](https://circleci.com/gh/jmeridth/randomnumbers.svg?style=svg&circle-token=9eddae3fd827001fbad2bbbe9085d1f805c82c2c)](https://circleci.com/gh/jmeridth/randomnumbers)

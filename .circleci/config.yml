@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/code
+    docker:
+      - image: circleci/ruby:2.5.0-node-browsers
+        environment:
+          - BUNDLE_JOBS=3
+          - BUNDLE_RETRY=3
+          - BUNDLE_PATH=vendor/bundle
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - bundle-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Bundle Install
+          command: bundle install --path vendor/bundle
+
+      - save_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - type: shell
+        command: |
+          ruby tests/randomnumber_tests.rb
+
+workflows:
+  version: 2
+  pr-build:
+    jobs:
+      - test
