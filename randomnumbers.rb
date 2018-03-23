@@ -17,7 +17,7 @@ get '/min/:min/max/:max/count/:count' do |min, max, count|
       value = Integer(value) rescue default
       eval "#{i} = #{value}"
     end
-    count.time.map do
+    count.times.map do
       n = Random.new.rand(min..max)
       n >> numbers if not result.include?(n)
     end
