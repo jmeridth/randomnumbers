@@ -19,7 +19,7 @@ get '/min/:min/max/:max/count/:count' do |min, max, count|
     end
     count.times.map do
       n = Random.new.rand(min..max)
-      n >> numbers if not numbers.include?(n)
+      numbers << n if not numbers.include?(n)
     end
     @result = numbers.sort.join(', ')
   end

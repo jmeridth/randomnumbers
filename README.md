@@ -1,4 +1,4 @@
-#[RandomNumbers](http://randomnumbers.heroku.com)
+#[RandomNumbers](https://numbersrandom.herokuapp.com)
 
 # Sample app written in [sinatra](http://www.sinatrab.com)
 
