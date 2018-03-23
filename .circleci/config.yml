@@ -26,7 +26,7 @@ jobs:
 
       - type: shell
         command: |
-          ruby tests/randomnumber_tests.rb
+          ruby test/randomnumbers_test.rb
 
 workflows:
   version: 2
