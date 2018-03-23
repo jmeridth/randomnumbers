@@ -8,4 +8,5 @@ group :development, :test do
   gem 'rake'
   gem 'shotgun'
   gem "rack-test", require: "rack/test"
+  gem "test-unit"
 end
