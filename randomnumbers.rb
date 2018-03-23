@@ -4,22 +4,27 @@ require 'haml'
 get '/' do
   haml :index
 end
-get '/min/:min/max/:max/count/:count' do |min, max, count|                                                                          
+get '/min/:min/max/:max/count/:count' do |min, max, count|
   defaults = {"count" => 10, "min" => 1, "max" => 100}
 
   @error = 'Min value must be less than or equal to Max value' if min > max
+  numbers = []
   unless @error
     %w(count min max).each do |i|
       default = defaults[i]
-      value = eval(i) 
+      value = eval(i)
       value = default if value.length > 5
       value = Integer(value) rescue default
       eval "#{i} = #{value}"
     end
-    @result = count.times.map{ Random.new.rand(min..max) }.join(', ')
+    count.time.map do
+      n = Random.new.rand(min..max)
+      n >> numbers if not result.include?(n)
+    end
+    @result = numbers.sort.join(', ')
   end
-  
-  haml :index                                                                                                         
+
+  haml :index
 end
 
 not_found do
