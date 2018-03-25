@@ -3,6 +3,7 @@ ruby '2.5.0'
 
 gem 'sinatra'
 gem 'haml'
+gem 'puma'
 
 group :development, :test do
   gem 'rake'
