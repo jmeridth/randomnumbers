@@ -1,4 +1,6 @@
-path = File.expand_path "../", __FILE__
-require "#{path}/randomnumbers"
+require "bundler"
+Bundler.require
 
-run Sinatra::Application
+require "./randomnumbers.rb"
+
+run RandomNumbers

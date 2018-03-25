@@ -1,10 +1,11 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
     mustermann (1.0.2)
+    power_assert (1.1.1)
     rack (2.0.4)
     rack-protection (2.0.1)
       rack
@@ -19,6 +20,8 @@ GEM
       rack-protection (= 2.0.1)
       tilt (~> 2.0)
     temple (0.8.0)
+    test-unit (3.2.7)
+      power_assert
     tilt (2.0.8)
 
 PLATFORMS
@@ -30,6 +33,10 @@ DEPENDENCIES
   rake
   shotgun
   sinatra
+  test-unit
+
+RUBY VERSION
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1

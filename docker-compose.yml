@@ -1,0 +1,9 @@
+version: '3'
+services:
+  rn:
+    container_name: rn_1
+    build: .
+    ports:
+      - 9292:9292
+    volumes:
+      - .:/code
