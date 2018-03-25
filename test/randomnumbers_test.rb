@@ -1,9 +1,13 @@
+require "bundler"
+Bundler.require
+
+require "./randomnumbers.rb"
 require File.expand_path('../test_helper.rb', __FILE__)
 
 class RandomNumbersTest < Test::Unit::TestCase
 
   def app
-    Sinatra::Application
+    RandomNumbers
   end
 
   def test_it_lists_the_input_form
