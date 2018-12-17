@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.0'
 
-gem 'sinatra'
+gem 'sinatra', '>= 2.0.2'
 gem 'haml'
 gem 'puma'
 gem 'rack', '>= 2.0.6'
