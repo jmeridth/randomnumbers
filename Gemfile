@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.7.1'
 
 gem 'sinatra', '>= 2.0.2'
 gem 'haml'
 gem 'puma'
-gem 'rack', '>= 2.0.6'
+gem 'rack', '>= 2.1.4'
 
 group :development, :test do
   gem 'rake'
