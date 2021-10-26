@@ -42,8 +42,5 @@ DEPENDENCIES
   sinatra (>= 2.0.2)
   test-unit
 
-RUBY VERSION
-   ruby 2.7.3p183
-
 BUNDLED WITH
    2.1.4
