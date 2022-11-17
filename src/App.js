@@ -23,7 +23,7 @@ function App() {
 
   const handleCountChange = (event, fieldName, setFunc) => {
     if (event.target.value > 0) {
-      setFunc(+event.target.value);
+      setFunc(parseInt(event.target.value));
     } else {
       setFunc(defaults[fieldName]);
     }
