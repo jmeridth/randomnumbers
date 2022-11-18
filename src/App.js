@@ -10,18 +10,34 @@ function App() {
   const [result, setResult] = useState([]);
   const [resultVisible, setResultVisible] = useState(false);
 
-  const getRandomNumbers = () => {
-    setResultVisible(false);
-    var results = [];
-    for (let i = 0; i < count; i++) {
-      var number = Math.floor(Math.random() * (max - min)) + min;
-      results.push(number);
+  const validateSettings = () => {
+    var valid = true;
+    setResults(false, []);
+    if (min > max) {
+      setResults(true, ["Min cannot be greater than Max"]);
+      valid = false;
     }
-    setResultVisible(true);
+    return valid;
+  }
+  const getRandomNumbers = () => {
+    var valid = validateSettings();
+    if (valid) {
+      var results = [];
+      for (let i = 0; i < count; i++) {
+        var number = Math.floor(Math.random() * (max - min)) + min;
+        results.push(number);
+      }
+      setResults(true, results);
+    }
+  }
+
+  const setResults = (visible, results) => {
+    setResultVisible(visible);
     setResult(results);
   }
 
   const handleCountChange = (event, fieldName, setFunc) => {
+    setResults(false, []);
     if (event.target.value > 0) {
       setFunc(parseInt(event.target.value));
     } else {
