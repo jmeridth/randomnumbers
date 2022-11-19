@@ -14,7 +14,10 @@ function App() {
     var valid = true;
     setResults(false, []);
     if (min > max) {
-      setResults(true, ["Min cannot be greater than Max"]);
+      setResults(true, ["Min can't be greater than max"]);
+      valid = false;
+    } else if (count > (max - min)) {
+      setResults(true, ["Count can't be greater than max minus min"]);
       valid = false;
     }
     return valid;
@@ -23,11 +26,13 @@ function App() {
     var valid = validateSettings();
     if (valid) {
       var results = [];
-      for (let i = 0; i < count; i++) {
+      while (results.length < count) {
         var number = Math.floor(Math.random() * (max - min)) + min;
-        results.push(number);
+        if (!results.includes(number)) {
+          results.push(number);
+        }
       }
-      setResults(true, results);
+      setResults(true, results.sort((a, b) => a - b));
     }
   }
 
